@@ -2,19 +2,20 @@
 import init.qcom.usb.rc
 
 on early-init
-    export EXTERNAL_STORAGE /mnt/sdcard
-    export SECONDARY_STORAGE /mnt/sdcard2
+    export EXTERNAL_STORAGE /storage/sdcard0
+    export SECONDARY_STORAGE /storage/sdcard1
 
 # create mountpoints
     mkdir /mnt 0775 root system
 
-    mkdir /mnt/sdcard 0000 system system
-    mkdir /mnt/sdcard2 0000 system system
+    mkdir /storage 0775 system sdcard_r
+    mkdir /storage/sdcard0 0000 system system
+    mkdir /storage/sdcard1 0000 system system
     mkdir /carrier 0770 system system
 
     # for backwards compatibility
-    symlink /mnt/sdcard /sdcard
-    symlink /mnt/sdcard2 /Device
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard1 /Device
 
 on init
     mount debugfs /sys/kernel/debug /sys/kernel/debug
