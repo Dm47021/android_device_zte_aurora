@@ -242,7 +242,8 @@ PRODUCT_PACKAGES += \
 	libnfc_ndef
 
 # Power
-
+PRODUCT_PACKAGES += \
+        power.msm8960 
 # Qcom
 # init scripts & softap
 PRODUCT_COPY_FILES += \

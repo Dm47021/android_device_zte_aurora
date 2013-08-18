@@ -95,6 +95,7 @@ JS_ENGINE := v8
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Power
+TARGET_PROVIDES_POWERHAL := true
 
 # Sensors
 
